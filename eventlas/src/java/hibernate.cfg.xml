@@ -4,9 +4,9 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://eventlas.com:3306/eventlas_events</property>
-    <property name="hibernate.connection.username">eventlas_site</property>
-    <property name="hibernate.connection.password">V#KyS!=#wpMC</property>
+    <property name="hibernate.connection.url">/property>
+    <property name="hibernate.connection.username"></property>
+    <property name="hibernate.connection.password"></property>
     <!-- Use the C3P0 connection pool. -->
     <property name="c3p0.min_size">5</property>
     <property name="c3p0.max_size">10</property>
