@@ -1,0 +1,103 @@
+AddEventToLocation
+    Authentication : required
+
+    Arguments:
+    title : required
+    overview : required
+    time : required : format: Nov 3, 2010 8:30 PM
+    longitude: required : format: float
+    latitude : required : format: float
+    visibility: required: format int
+
+AddEventToVenue
+    Authentication : required
+
+    Arguments:
+    title : required : format: String
+    overview: required : format: String
+    time : required: format : Nov 3, 2010 8:30 PM
+    venueid: required : format : int
+    visibility: required : format: int
+
+AddCommentForEvent:
+    Authentication: required
+
+    Arguments:
+    eventid: required: format: int
+    rating : not required: format: int
+    comment: required: format: string
+
+AddCommentForVenue
+    Authentication : required
+
+    Arguments:
+    venueid: required: format: int
+    comment: required: format: string
+    rating: not required: format string
+
+
+AddVenue
+    Authentication : required
+
+    Arguments:
+    name: required: format: string
+    overview: required: format: string
+    address: required: format: string
+    longitude: required: format: float
+    latitude: required: format: float
+    iconid: not required: format:int
+
+UpdateEvent
+    Authentication: required
+    restricted: yes: to user who added event
+
+    arguments:
+
+
+CancelEvent
+    Authentication: required
+    restricted: yes: to user who added event
+
+    arguments:
+    eventid:required:format:int
+
+
+UpdateEvent
+    Authentication:required
+    restricted: yes: to user who added the event
+
+    arguments:
+    eventid: required: format:int
+    optionals
+
+updateinvites:format:booliean
+    title:format:string
+    overview:format:string
+    time:format:Nov 3, 2010 8:30 PM
+    longitude:format:float
+    latitude:format:float
+    venueid:int
+
+GetCommentsForEvent
+    Authentication: not required
+    arguments:
+    eventid:format:integer
+    response:format:array{{message,code},{id{user,rating,comment},id{user,rating,comment}...}}
+
+GetCommentsForVenue
+    Authentication: not required
+    arguments:
+    venueid:format:integer
+    response:format:array{{message,code},{id{user,rating,comment},id{user,rating,comment}...}}
+
+GetVenueById
+    Authentication: not required
+    arguments:
+    venueid:format:integer
+    response:format:array{{message,code},{summary,address,name}}
+
+GetEventById
+    Authentication: not required
+    arguments:
+    eventid:format:integer
+    response:format:array{{message,code},{summary,title,visibility,eventdate}}

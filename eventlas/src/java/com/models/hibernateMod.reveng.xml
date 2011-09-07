@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="eventlas_events"/>
+  <table-filter match-name="users"/>
+  <table-filter match-name="invites"/>
+  <table-filter match-name="icons"/>
+  <table-filter match-name="visibility"/>
+  <table-filter match-name="keys"/>
+  <table-filter match-name="venues"/>
+  <table-filter match-name="groups"/>
+  <table-filter match-name="usersgroups"/>
+  <table-filter match-name="events"/>
+  <table-filter match-name="location"/>
+</hibernate-reverse-engineering>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 24, 2010 10:46:50 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="eventlas_events" name="com.models.Users" table="users">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="username" type="string">
+      <column length="45" name="username" not-null="true" unique="true"/>
+    </property>
+    <property name="ageRange" type="string">
+      <column length="45" name="agerange" not-null="false" unique="false"/>
+    </property>
+    <property name="sex" type="string">
+      <column length="45" name="sex" not-null="false" unique="false"/>
+    </property>
+    <property name="phone" type="string">
+      <column length="45" name="phone" not-null="false" unique="false"/>
+    </property>
+    <property name="mobileKey" type="string">
+      <column length="32" name="mobilekey" not-null="true" unique="true"/>
+    </property>
+    <property name="email" type="string">
+      <column length="256" name="email" not-null="false" unique="true"/>
+    </property>
+    <property name="password" type="string">
+      <column length="45" name="password"/>
+    </property>
+    <property name="countryCode" type="string">
+      <column length="8" name="countrycode"/>
+    </property>
+    <set inverse="true" name="eventses">
+      <key>
+        <column name="userid" not-null="true"/>
+      </key>
+      <one-to-many class="com.models.Events"/>
+    </set>
+    <set inverse="true" name="inviteses">
+      <key>
+        <column name="userid" not-null="true"/>
+      </key>
+      <one-to-many class="com.models.Invites"/>
+    </set>
+    <set inverse="true" name="usersgroupsesForUserid">
+      <key>
+        <column name="userid" not-null="true"/>
+      </key>
+      <one-to-many class="com.models.Usersgroups"/>
+    </set>
+    <set inverse="true" name="groupses">
+      <key>
+        <column name="userid" not-null="true" unique="true"/>
+      </key>
+      <one-to-many class="com.models.Groups"/>
+    </set>
+    <set inverse="true" name="usersfriends">
+      <key>
+        <column name="userid" not-null="true" unique="true"/>
+      </key>
+      <one-to-many class="com.models.UserFriends"/>
+    </set>
+    <set inverse="true" name="usersgroupsesForGroupmemberid">
+      <key>
+        <column name="groupmemberid" not-null="true"/>
+      </key>
+      <one-to-many class="com.models.Usersgroups"/>
+    </set>
+    <one-to-one class="com.models.Profile" name="profile" property-ref="user"/>
+  </class>
+  <query name="Users_FindByUserid">
+      from Users u where u.id = :userid
+  </query>
+  <query name="Users_FindByUsername">
+      from Users u where u.username = :username
+  </query>
+</hibernate-mapping>

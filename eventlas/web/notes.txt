@@ -1,0 +1,48 @@
+Creating new user
+
+AppLaunches
+
+if there is no appkey stored brings up create user
+also sends api call to RegisterMobileKey
+
+with args of timestamp and uid
+this creates a key associated with uid
+
+
+at same time same key is created and stored on the app
+
+when a mobile registers a user it sends the uid & the appkey
+
+and this allows a user to be created and when a user is created it sends back the
+user info ie the userid this is stored and the api is used with this id and also
+the appkey as the apikey.
+
+Android		Iphone		title
+0		1		accept/decline invite
+0		1		add user
+0		1		choose category
+0		1		edit my existing event
+
+0		2		view user
+
+1		1		view event details
+1		2		send invite
+1*		2		add event
+
+2		2		map of nearby events
+2		2		find venue
+2		2		add venue
+
+0		0		add category^
+0               0               Notifications
+
+* Categories
+^ not in alpha
+
+mobile text key
+
+apikey = b3fd6e0c-63bf-4f11-9f26-974a60c63fd6
+secret = 400ca003036e49d484de2d6fea31395825b04c3d
+
+event sharing
+when adding an event, if the visibility is set to group

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/eventlas" >
+    <Resource 
+    name="jdbc/eventlas"
+    auth="Container"
+    type="javax.sql.DataSource"
+    maxActice="50"
+    maxIdle="30"
+    maxWait="10000"
+    username="eventlas_site"
+    password="V#KyS!=#wpMC"
+    driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://95.154.246.7:3306/eventlas_events" />
+</Context>

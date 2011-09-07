@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 24, 2010 10:46:50 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="eventlas_events" name="com.models.Location" table="location">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="longitude" type="float">
+      <column name="longitude" not-null="true" precision="10" scale="6"/>
+    </property>
+    <property name="latitude" type="float">
+      <column name="latitude" not-null="true" precision="10" scale="6"/>
+    </property>
+    <property name="hashid" type="string">
+      <column length="32" name="hashid" not-null="true" unique="true"/>
+    </property>
+    <set inverse="true" name="eventses">
+      <key>
+        <column name="locid" not-null="true"/>
+      </key>
+      <one-to-many class="com.models.Events"/>
+    </set>
+    <set inverse="true" name="venueses">
+      <key>
+        <column name="locid" not-null="true"/>
+      </key>
+      <one-to-many class="com.models.Venues"/>
+    </set>
+  </class>
+  <sql-query name="findNearbyLocations">
+	<return alias="location" class="com.models.Location"/>
+	SELECT *,  ( 3959 * acos( cos( radians(:latitudeval) ) * cos( radians( latitude ) ) * cos( radians( longitude ) - radians(:longitudeval) ) + sin( radians(:latitudeval) ) * sin( radians( latitude ) ) ) ) AS distance FROM location HAVING distance &lt; :distance ORDER BY distance DESC LIMIT 0 , 250;
+    </sql-query>
+</hibernate-mapping>

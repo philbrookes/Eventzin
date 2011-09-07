@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 24, 2010 10:46:50 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="eventlas_events" name="com.models.Venues" table="venues">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="com.models.Icons" fetch="select" name="icons">
+      <column name="iconid" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="com.models.Location" fetch="select" name="location">
+      <column name="locid" not-null="true"/>
+    </many-to-one>
+    <property name="name" type="string">
+      <column length="256" name="name" not-null="true"/>
+    </property>
+    <property name="address" type="string">
+      <column length="65535" name="address" not-null="true"/>
+    </property>
+    <property name="rating" type="integer">
+      <column name="rating" not-null="true"/>
+    </property>
+    <property name="summary" type="string">
+      <column length="140" name="summary" not-null="true"/>
+    </property>
+    <property name="googleid" type="string">
+      <column length="512" name="googleid" not-null="false"/>
+    </property>
+    <set inverse="true" name="eventses">
+      <key>
+        <column name="venueid" not-null="true"/>
+      </key>
+      <one-to-many class="com.models.Events"/>
+    </set>
+    <set inverse="true" name="venuecomments">
+      <key>
+        <column name="venueid" not-null="true"/>
+      </key>
+      <one-to-many class="com.models.Venuecomments"/>
+    </set>
+  </class>
+</hibernate-mapping>

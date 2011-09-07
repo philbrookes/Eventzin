@@ -1,0 +1,136 @@
+/* 
+    Document   : main
+    Created on : Dec 5, 2010, 7:36:02 PM
+    Author     : craigbrookes
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+.centeredform{
+    position:  relative;
+    margin-left: 250px;
+    
+
+}
+
+.generalForm{
+
+}
+
+.generalinput{
+    width: 250px;
+    height: 30px;
+    margin: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 2px;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+#central-column{
+	
+	width: 1200px;
+	padding-top: 10px;
+	padding-bottom: 1px;
+	margin: auto;
+	min-height: 1000px;
+	height: auto;
+}
+
+
+#content-area{
+	position: relative;
+	margin: auto;
+	width:911px;
+}
+
+#navigationbar{
+    background-color: #3A3A3A;
+    margin: 5px auto;
+    width:inherit;
+}
+
+#navigationlist li{
+float: left;
+padding:  4px;
+}
+a{
+    font-size: 12px;
+}
+#navigationlist li a{
+color: white;
+text-shadow: 0 -1px 1px rgba(0, 0, 0, 1.0);
+font-size: 12px;
+padding: 3px 10px 3px 3px;
+display: block;
+text-decoration: none;
+font-family: Arial,Helvetica,sans-serif;
+border-right: 1px #fdfcf9 dashed;
+}
+
+#footer{
+     background-color: #3A3A3A;
+     width: inherit;
+     margin-top: 5px;
+}
+
+.footlinks{
+    width: 200px;
+    padding: 4px;
+    margin: 4px;
+    border-left: 1px #fdfcf9 dashed;
+    text-align: center;
+}
+
+.footerlist li a{
+    color: white;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 1.0);
+    text-decoration: none;
+}
+
+.event{
+    width: inherit;
+    height: 90px;
+    background-color: #e3e3e3;
+    border-bottom: 3px solid #3A3A3A;
+}
+.fullevent{
+    width: inherit;
+    margin-bottom: 10px;
+}
+
+.listcolumn{
+   width: 600px;
+}
+
+.attending{
+    margin-left: 11px;
+    width: 300px;
+}
+
+#addeventform{
+    
+}
+
+.formtext{
+    width: 300px;
+    height: 15px;
+    padding:2px;
+    margin: 3px;
+    font-size: 12px;
+}
+
+.textcentered{
+    text-align: center;
+}

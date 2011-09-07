@@ -1,0 +1,7 @@
+#a log of potential issues
+
+1. the UpdateUserEventStausController sends out mail to the inviters of an event each time the status is changed for that event
+this may lead to a lot of email being sent and possibly annoying users
+
+2. time zones
+we have to make sure the times are right. at the moment the server seems to be off by a few hours
